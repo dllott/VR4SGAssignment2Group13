@@ -16,8 +16,13 @@ public class Work : MonoBehaviour
     }
     public void goWork()
     {
-        clock.GetComponentInChildren<GameClock>().working();//hour += 7;
-        money.GetComponent<Money>().cash += 100;
+        if (!clock.GetComponentInChildren<GameClock>().bedTime)
+        {
+            clock.GetComponentInChildren<GameClock>().working();//hour += 7;
+            money.GetComponent<Money>().cash += 100;
+        }
+        else {
+        }
     }
     // Update is called once per frame
     void Update()

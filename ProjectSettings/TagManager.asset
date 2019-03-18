@@ -6,6 +6,8 @@ TagManager:
   tags:
   - fridge
   - door
+  - bed
+  - insulin
   layers:
   - Default
   - TransparentFX

@@ -42,10 +42,26 @@ public class VRGaze : MonoBehaviour
                      
                     }
 
-                    if (imgGaze.fillAmount == 1 && _hit.transform.CompareTag("door"))
+                    if (imgGaze.fillAmount == 1 && _hit.transform.CompareTag("bed"))
+                    {
+                        _hit.transform.gameObject.GetComponent<bedBehavior>().Sleep();
+                        gvrTimer = 0;
+
+                    }
+
+                    if (imgGaze.fillAmount == 1 && _hit.transform.CompareTag("insulin"))
+                    {
+                        _hit.transform.gameObject.GetComponent<InsulinInfo>().medicated();
+                        gvrTimer = 0;
+
+                    }
+
+            if (imgGaze.fillAmount == 1 && _hit.transform.CompareTag("door"))
                     {
                         _hit.transform.gameObject.GetComponent<Work>().goWork();
                 gvrTimer = 0;
+
+
             }/*
                     if (imgGaze.fillAmount == 0 && _hit.transform.CompareTag("teleportGood"))
                     {

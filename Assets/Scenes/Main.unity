@@ -539,6 +539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3df84676f226234a885c39b1a9b676d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  insf: {fileID: 0}
 --- !u!4 &311263996
 Transform:
   m_ObjectHideFlags: 0
@@ -719,6 +720,7 @@ MonoBehaviour:
   fridge: {fileID: 389198749}
   insulin: {fileID: 0}
   money: {fileID: 0}
+  gclock: {fileID: 0}
   Fridgescreen: {fileID: 406562925}
   _hunger: 0
 --- !u!1 &389255504
@@ -999,9 +1001,10 @@ GameObject:
   - component: {fileID: 469382783}
   - component: {fileID: 469382782}
   - component: {fileID: 469382781}
+  - component: {fileID: 469382784}
   m_Layer: 0
   m_Name: bed
-  m_TagString: Untagged
+  m_TagString: bed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1018,7 +1021,41 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 907292809}
+          m_MethodName: GVROn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 907292809}
+          m_MethodName: GVROff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
 --- !u!65 &469382782
 BoxCollider:
@@ -1048,6 +1085,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: 0}
+--- !u!114 &469382784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469382780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37344e5f358602b47878d4b2561b6e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &533808820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,7 +1701,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5ea35fd3e67424faa51a21064b66a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  day: 0
+  maxDay: 28
+  hunger: {fileID: 0}
   hour: 7
+  bedTime: 0
 --- !u!1 &906497728
 GameObject:
   m_ObjectHideFlags: 0
@@ -3282,6 +3335,7 @@ MonoBehaviour:
   fridge: {fileID: 0}
   insulin: {fileID: 0}
   money: {fileID: 0}
+  gclock: {fileID: 0}
   Fridgescreen: {fileID: 406562925}
   _hunger: 0
 --- !u!114 &1753831558
@@ -3614,7 +3668,7 @@ GameObject:
   - component: {fileID: 2010451745}
   m_Layer: 0
   m_Name: Insulin
-  m_TagString: Untagged
+  m_TagString: insulin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3631,7 +3685,41 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 907292809}
+          m_MethodName: GVROn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 907292809}
+          m_MethodName: GVROff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
 --- !u!65 &2010451743
 BoxCollider:
@@ -3676,8 +3764,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayInsulin: {fileID: 0}
+  monn: {fileID: 0}
   insulin: {fileID: 0}
-  doses: 28
+  doses: 10
+  needToTake: 0
 --- !u!1 &2111712038
 GameObject:
   m_ObjectHideFlags: 0
@@ -3771,8 +3861,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayInsulin: {fileID: 0}
+  monn: {fileID: 0}
   insulin: {fileID: 0}
   doses: 28
+  needToTake: 0
 --- !u!4 &2133936641 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400010, guid: 6ef6080febb23a84fa484686832a880e,
