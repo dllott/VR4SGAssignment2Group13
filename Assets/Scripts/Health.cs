@@ -11,21 +11,24 @@ public class Health : MonoBehaviour
     public GameObject fridge; //= GameObject.Find("fridge");
     public GameObject insulin;
     public GameObject money;
+    public GameClock gclock;
     public RectTransform Fridgescreen = null;
-    public  float _hunger = 0.0f;
+    //public  float _hunger = 0.0f;
     double secondsSinceStart;
+    LevelController levelController;
     // Start is called before the first frame update
 
     void Start()
     {
-        _hunger = 0;
+        levelController = GameObject.Find("LevelController").GetComponent<LevelController>();
+        //_hunger = 0;
         fridge = GameObject.Find("fridge");
         insulin = GameObject.Find("Insulin");
         money = GameObject.Find("computerdesk");
         _healthSlider = fridge.GetComponentInChildren<Slider>();
-
+        gclock = GameObject.Find("clock").GetComponentInChildren<GameClock>();
         
-        InvokeRepeating("CountHunger", 1.0f, 1.0f);
+        //InvokeRepeating("CountHunger", 1.0f, 1.0f);
     }
 
     // Update is called once per frame
@@ -36,24 +39,27 @@ public class Health : MonoBehaviour
         {
             _hunger++;
         }*/
-        _healthSlider.value = (float)_hunger / 20;
+        _healthSlider.value = (float)levelController._hunger / 20;
         //secondsSinceStart++;
         /*if(secondsSinceStart == 5)
         {
             Eat();
         }*/
     }
-    void CountHunger()
+    public void CountHunger(int c)
     {
-        _hunger++;
+        levelController._hunger+=c;
         //secondsSinceStart++;
     }
     public void Eat()
     {
-        _hunger = 0.0f;
+        levelController._hunger -= 10.0f;
+        if(levelController._hunger < 0) {
+            levelController._hunger = 0;
+        }
         _healthSlider.value = 0;
-        insulin.GetComponent<InsulinInfo>().doses -= 1;
-        money.GetComponent<Money>().cash -= 50;
-
+        insulin.GetComponent<InsulinInfo>().SetNeed(true);
+        levelController.cash -= 50;
+        gclock.MoveTime(1);
     }
 }

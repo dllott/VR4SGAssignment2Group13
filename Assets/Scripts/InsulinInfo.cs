@@ -7,12 +7,17 @@ using System;
 public class InsulinInfo : MonoBehaviour
 {
     public Text displayInsulin;
+    //public Money monn;
     public GameObject insulin;
-    public int doses = 28;
+    //public int doses = 10;
+    public bool needToTake = false;
     string sDoses;
+    LevelController levelController;
     // Start is called before the first frame update
     void Start()
     {
+        levelController = GameObject.Find("LevelController").GetComponent<LevelController>();
+        //monn = GameObject.Find("computerdesk").GetComponent<Money>();
         insulin = GameObject.Find("Insulin");
         displayInsulin = insulin.GetComponentInChildren<Text>();
     }
@@ -20,14 +25,31 @@ public class InsulinInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sDoses = doses.ToString();
+        sDoses = levelController.doses.ToString();
         displayInsulin.text = "Doses left: " + sDoses;
-    }
-    void medicated()
-    {
-        if (doses != 0)
-        {
-            doses -= 1;
+        if (needToTake) {
+            displayInsulin.text = displayInsulin.text + "\n You need to take!";
         }
+    }
+    public void medicated()
+    {
+        //doses--;
+        if (levelController.doses != 0)
+        {
+
+            levelController.doses -= 1;
+            SetNeed(false);
+        } else
+        {
+            if(levelController.cash >= 500)
+            {
+                levelController.cash -= 500;
+                levelController.doses += 90;
+            }
+        }
+
+    }
+    public void SetNeed(bool set) {
+        needToTake = set;
     }
 }
