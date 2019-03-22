@@ -39,7 +39,7 @@ public class Health : MonoBehaviour
         {
             _hunger++;
         }*/
-        _healthSlider.value = (float)levelController._hunger / 20;
+        _healthSlider.value = (float)levelController._hunger / 5;
         //secondsSinceStart++;
         /*if(secondsSinceStart == 5)
         {

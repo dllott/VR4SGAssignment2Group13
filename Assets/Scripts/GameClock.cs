@@ -8,7 +8,7 @@ using System;
 
 public class GameClock : MonoBehaviour
 {
-    public int day = 0;
+    //public int day = 0;
     public int maxDay = 28;
     private Text displayClock;
     public Health hunger;
@@ -70,28 +70,22 @@ public class GameClock : MonoBehaviour
     }
     public void working()
     {
-        hunger.CountHunger(2);
+        hunger.CountHunger(5);
         levelController.hour += 7;
-        if (levelController.hour >= 12)
-        {
-            if (levelController.dayNight == "A.M.")
-            {
-                levelController.dayNight = "P.M.";
-            }
-            else
-            {
-                levelController.hour = 7;
-                levelController.dayNight = "A.M.";
-            }
-        }
-        if (levelController.hour >= 13)
-        {
-            levelController.hour -= 12;
-        }
+        CheckDayNight();
     }
     public void MoveTime(int t)
     {
         levelController.hour += t;
+        CheckDayNight();
+    }
+    string LeadingZero(int x)
+    {
+        return x.ToString().PadLeft(2, '0');
+    }
+
+    void CheckDayNight()
+    {
         if (levelController.hour >= 12)
         {
             if (levelController.dayNight == "A.M.")
@@ -101,6 +95,7 @@ public class GameClock : MonoBehaviour
             else
             {
                 levelController.hour = 7;
+                levelController.IncrementDay();
                 levelController.dayNight = "A.M.";
             }
         }
@@ -108,9 +103,5 @@ public class GameClock : MonoBehaviour
         {
             levelController.hour -= 12;
         }
-    }
-    string LeadingZero(int x)
-    {
-        return x.ToString().PadLeft(2, '0');
     }
 }
