@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 311263995}
   m_Layer: 0
   m_Name: LevelController
-  m_TagString: Untagged
+  m_TagString: control
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,7 +539,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3df84676f226234a885c39b1a9b676d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insf: {fileID: 0}
+  cash: 500
+  hour: 7
+  minutes: 0
+  dayNight: A.M.
+  bedTime: 0
+  needToTake: 0
+  _hunger: 0
+  doses: 10
 --- !u!4 &311263996
 Transform:
   m_ObjectHideFlags: 0
@@ -722,7 +729,6 @@ MonoBehaviour:
   money: {fileID: 0}
   gclock: {fileID: 0}
   Fridgescreen: {fileID: 406562925}
-  _hunger: 0
 --- !u!1 &389255504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,7 +1710,6 @@ MonoBehaviour:
   day: 0
   maxDay: 28
   hunger: {fileID: 0}
-  hour: 7
   bedTime: 0
 --- !u!1 &906497728
 GameObject:
@@ -2161,7 +2166,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayMoney: {fileID: 0}
   money: {fileID: 0}
-  cash: 500
 --- !u!1 &1020451475
 GameObject:
   m_ObjectHideFlags: 0
@@ -3337,7 +3341,6 @@ MonoBehaviour:
   money: {fileID: 0}
   gclock: {fileID: 0}
   Fridgescreen: {fileID: 406562925}
-  _hunger: 0
 --- !u!114 &1753831558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3764,9 +3767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayInsulin: {fileID: 0}
-  monn: {fileID: 0}
   insulin: {fileID: 0}
-  doses: 10
   needToTake: 0
 --- !u!1 &2111712038
 GameObject:
@@ -3861,9 +3862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayInsulin: {fileID: 0}
-  monn: {fileID: 0}
   insulin: {fileID: 0}
-  doses: 28
   needToTake: 0
 --- !u!4 &2133936641 stripped
 Transform:

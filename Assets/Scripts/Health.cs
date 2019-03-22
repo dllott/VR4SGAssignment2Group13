@@ -13,13 +13,15 @@ public class Health : MonoBehaviour
     public GameObject money;
     public GameClock gclock;
     public RectTransform Fridgescreen = null;
-    public  float _hunger = 0.0f;
+    //public  float _hunger = 0.0f;
     double secondsSinceStart;
+    LevelController levelController;
     // Start is called before the first frame update
 
     void Start()
     {
-        _hunger = 0;
+        levelController = GameObject.Find("LevelController").GetComponent<LevelController>();
+        //_hunger = 0;
         fridge = GameObject.Find("fridge");
         insulin = GameObject.Find("Insulin");
         money = GameObject.Find("computerdesk");
@@ -37,7 +39,7 @@ public class Health : MonoBehaviour
         {
             _hunger++;
         }*/
-        _healthSlider.value = (float)_hunger / 20;
+        _healthSlider.value = (float)levelController._hunger / 20;
         //secondsSinceStart++;
         /*if(secondsSinceStart == 5)
         {
@@ -46,15 +48,18 @@ public class Health : MonoBehaviour
     }
     public void CountHunger(int c)
     {
-        _hunger+=c;
+        levelController._hunger+=c;
         //secondsSinceStart++;
     }
     public void Eat()
     {
-        _hunger = 0.0f;
+        levelController._hunger -= 10.0f;
+        if(levelController._hunger < 0) {
+            levelController._hunger = 0;
+        }
         _healthSlider.value = 0;
         insulin.GetComponent<InsulinInfo>().SetNeed(true);
-        money.GetComponent<Money>().cash -= 50;
+        levelController.cash -= 50;
         gclock.MoveTime(1);
     }
 }

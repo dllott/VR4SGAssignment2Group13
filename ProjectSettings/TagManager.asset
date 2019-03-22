@@ -8,6 +8,7 @@ TagManager:
   - door
   - bed
   - insulin
+  - control
   layers:
   - Default
   - TransparentFX
