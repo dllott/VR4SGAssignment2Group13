@@ -540,6 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cash: 500
+  Day: 0
   hour: 7
   minutes: 0
   dayNight: A.M.
@@ -547,6 +548,10 @@ MonoBehaviour:
   needToTake: 0
   _hunger: 0
   doses: 10
+  DaysWithoutInsulin: 0
+  dying: 0
+  endscene:
+    m_Handle: 0
 --- !u!4 &311263996
 Transform:
   m_ObjectHideFlags: 0
@@ -1707,7 +1712,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5ea35fd3e67424faa51a21064b66a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  day: 0
   maxDay: 28
   hunger: {fileID: 0}
   bedTime: 0
@@ -1906,6 +1910,7 @@ GameObject:
   - component: {fileID: 959308590}
   - component: {fileID: 959308589}
   - component: {fileID: 959308594}
+  - component: {fileID: 959308588}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1913,6 +1918,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &959308588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959308587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc6bde01469c7b4badee5362f191d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  downsample: 0
+  blurSize: 0
+  blurIterations: 1
+  blurType: 0
+  blurShader: {fileID: 4800000, guid: f9d5fa183cd6b45eeb1491f74863cd91, type: 3}
 --- !u!81 &959308589
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3768,7 +3790,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayInsulin: {fileID: 0}
   insulin: {fileID: 0}
-  needToTake: 0
 --- !u!1 &2111712038
 GameObject:
   m_ObjectHideFlags: 0
@@ -3863,7 +3884,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayInsulin: {fileID: 0}
   insulin: {fileID: 0}
-  needToTake: 0
 --- !u!4 &2133936641 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400010, guid: 6ef6080febb23a84fa484686832a880e,

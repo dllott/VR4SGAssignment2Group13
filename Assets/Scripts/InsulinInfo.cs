@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityStandardAssets.ImageEffects;
+
 
 public class InsulinInfo : MonoBehaviour
 {
@@ -10,9 +12,9 @@ public class InsulinInfo : MonoBehaviour
     //public Money monn;
     public GameObject insulin;
     //public int doses = 10;
-    public bool needToTake = false;
     string sDoses;
     LevelController levelController;
+    BlurOptimized blurScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +29,8 @@ public class InsulinInfo : MonoBehaviour
     {
         sDoses = levelController.doses.ToString();
         displayInsulin.text = "Doses left: " + sDoses;
-        if (needToTake) {
-            displayInsulin.text = displayInsulin.text + "\n You need to take!";
+        if (levelController.needToTake) {
+            displayInsulin.text = "Doses left: " + sDoses + "\n You need to take insulin!";
         }
     }
     public void medicated()
@@ -36,7 +38,6 @@ public class InsulinInfo : MonoBehaviour
         //doses--;
         if (levelController.doses != 0)
         {
-
             levelController.doses -= 1;
             SetNeed(false);
         } else
@@ -50,6 +51,7 @@ public class InsulinInfo : MonoBehaviour
 
     }
     public void SetNeed(bool set) {
-        needToTake = set;
+        levelController.needToTake = set;
+
     }
 }

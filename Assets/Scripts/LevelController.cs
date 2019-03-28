@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.ImageEffects;
+using UnityEngine.UI;
+
 
 public class LevelController : MonoBehaviour
 {
@@ -16,6 +19,10 @@ public class LevelController : MonoBehaviour
     public int doses = 10;
     bool growling = false;
     public int DaysWithoutInsulin = 0;
+    private BlurOptimized blurScript;
+    public bool dying = false;
+    public Image darken;
+    private Color c;
 
     //Variables to supply in the editor
     [SerializeField] public Scene endscene;
@@ -34,12 +41,29 @@ public class LevelController : MonoBehaviour
 
     void Start()
     {
-        
+        GameObject player = GameObject.Find("Player");
+        GameObject camera = player.transform.Find("Main Camera").gameObject;
+        blurScript = camera.GetComponent<BlurOptimized>();
+        c = darken.color;
+        c.a = 0;
+        darken.color = c;
     }
 
     void Update()
     {
-        if(_hunger >= 25)
+        if (c.a < 0.2f)
+        {
+            c.a += Time.deltaTime*0.1f;
+            darken.color = c;
+        }
+        if (needToTake && !dying)
+        {
+            blurScript.downsample = 1;
+            blurScript.blurSize = 1;
+            blurScript.blurIterations = 1;
+
+        }
+        if (_hunger >= 25)
         {
             //play stomach growling sounds, do other things??
             if (!growling)
@@ -72,7 +96,10 @@ public class LevelController : MonoBehaviour
             DaysWithoutInsulin++;
             if(DaysWithoutInsulin > 1)
             {
-                EndGame();
+                dying = true;
+                blurScript.blurSize = 3;
+                blurScript.blurIterations = 2;
+                //EndGame();
             }
         } else
         {
