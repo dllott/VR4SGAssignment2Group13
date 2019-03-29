@@ -112,7 +112,12 @@ ModelImporter:
     10800000: freezer_light
     10800002: Light
     10800004: main_light
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat
+    second: {fileID: 2100002, guid: 48383a4bb8585ab47991ba4908d02669, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

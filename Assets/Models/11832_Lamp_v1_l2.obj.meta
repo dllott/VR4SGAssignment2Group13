@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: e6cf08b29d73d854c80274eb5e1c0916
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Lamp_body
+    100004: Lamp_bulb_body
+    100006: Lamp_bulb_filament
+    100008: Lamp_bulb_glass
+    100010: Lamp_bulb_glass_2
+    100012: Lamp_shade
+    400000: //RootNode
+    400002: Lamp_body
+    400004: Lamp_bulb_body
+    400006: Lamp_bulb_filament
+    400008: Lamp_bulb_glass
+    400010: Lamp_bulb_glass_2
+    400012: Lamp_shade
+    2100000: Lamp_bodyMat
+    2100002: Lamp_bulb_bodyMat
+    2100004: Lamp_bulb_filamentMat
+    2100006: Lamp_bulb_glassMat
+    2100008: Lamp_bulb_glass_2Mat
+    2100010: Lamp_shadeMat
+    2300000: Lamp_body
+    2300002: Lamp_bulb_body
+    2300004: Lamp_bulb_filament
+    2300006: Lamp_bulb_glass
+    2300008: Lamp_bulb_glass_2
+    2300010: Lamp_shade
+    3300000: Lamp_body
+    3300002: Lamp_bulb_body
+    3300004: Lamp_bulb_filament
+    3300006: Lamp_bulb_glass
+    3300008: Lamp_bulb_glass_2
+    3300010: Lamp_shade
+    4300000: Lamp_body
+    4300002: Lamp_bulb_body
+    4300004: Lamp_bulb_filament
+    4300006: Lamp_bulb_glass
+    4300008: Lamp_bulb_glass_2
+    4300010: Lamp_shade
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamp_bodyMat
+    second: {fileID: 2100000, guid: e1ec14e226751fe48a6536555ce85de5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamp_bulb_bodyMat
+    second: {fileID: 2100000, guid: e1ec14e226751fe48a6536555ce85de5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamp_bulb_filamentMat
+    second: {fileID: 2100000, guid: 7bdcf2e9f06827b449311c0e39a66483, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamp_bulb_glassMat
+    second: {fileID: 2100000, guid: 7bdcf2e9f06827b449311c0e39a66483, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamp_bulb_glass_2Mat
+    second: {fileID: 2100000, guid: 7bdcf2e9f06827b449311c0e39a66483, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamp_shadeMat
+    second: {fileID: 2100000, guid: 7bdcf2e9f06827b449311c0e39a66483, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
