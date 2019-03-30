@@ -1,0 +1,205 @@
+fileFormatVersion: 2
+guid: 923c1115e38c7494fa2db8a3998c89e8
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Circle
+    100002: Circle.2
+    100004: Circle.3
+    100006: Circle.4
+    100008: //RootNode
+    100010: Cube
+    100012: Cube.1
+    100014: Cube.10
+    100016: Cube.11
+    100018: Cube.2
+    100020: Cube.3
+    100022: Cube.4
+    100024: Cube.5
+    100026: Cube.6
+    100028: Cube.7
+    100030: Cube.8
+    100032: Cube.9
+    100034: Extrude NURBS
+    100036: Extrude NURBS.1
+    100038: Extrude NURBS.2
+    100040: Extrude NURBS.3
+    100042: Light
+    100044: Null
+    100046: Spline
+    100048: Spline.2
+    100050: Spline.3
+    100052: Spline.4
+    100054: Stand 1
+    100056: Stand 2
+    400000: Circle
+    400002: Circle.2
+    400004: Circle.3
+    400006: Circle.4
+    400008: //RootNode
+    400010: Cube
+    400012: Cube.1
+    400014: Cube.10
+    400016: Cube.11
+    400018: Cube.2
+    400020: Cube.3
+    400022: Cube.4
+    400024: Cube.5
+    400026: Cube.6
+    400028: Cube.7
+    400030: Cube.8
+    400032: Cube.9
+    400034: Extrude NURBS
+    400036: Extrude NURBS.1
+    400038: Extrude NURBS.2
+    400040: Extrude NURBS.3
+    400042: Light
+    400044: Null
+    400046: Spline
+    400048: Spline.2
+    400050: Spline.3
+    400052: Spline.4
+    400054: Stand 1
+    400056: Stand 2
+    2100000: Mat
+    2300000: Cube
+    2300002: Cube.1
+    2300004: Cube.10
+    2300006: Cube.11
+    2300008: Cube.2
+    2300010: Cube.3
+    2300012: Cube.4
+    2300014: Cube.5
+    2300016: Cube.6
+    2300018: Cube.7
+    2300020: Cube.8
+    2300022: Cube.9
+    2300024: Extrude NURBS
+    2300026: Extrude NURBS.1
+    2300028: Extrude NURBS.2
+    2300030: Extrude NURBS.3
+    2300032: Stand 1
+    2300034: Stand 2
+    3300000: Cube
+    3300002: Cube.1
+    3300004: Cube.10
+    3300006: Cube.11
+    3300008: Cube.2
+    3300010: Cube.3
+    3300012: Cube.4
+    3300014: Cube.5
+    3300016: Cube.6
+    3300018: Cube.7
+    3300020: Cube.8
+    3300022: Cube.9
+    3300024: Extrude NURBS
+    3300026: Extrude NURBS.1
+    3300028: Extrude NURBS.2
+    3300030: Extrude NURBS.3
+    3300032: Stand 1
+    3300034: Stand 2
+    4300000: Extrude NURBS.3
+    4300002: Extrude NURBS.2
+    4300004: Extrude NURBS.1
+    4300006: Extrude NURBS
+    4300008: Cube.11
+    4300010: Cube.10
+    4300012: Cube.9
+    4300014: Cube.8
+    4300016: Cube.7
+    4300018: Cube.6
+    4300020: Cube.5
+    4300022: Cube.3
+    4300024: Cube.2
+    4300026: Cube.1
+    4300028: Cube.4
+    4300030: Stand 2
+    4300032: Stand 1
+    4300034: Cube
+    10800000: Light
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
