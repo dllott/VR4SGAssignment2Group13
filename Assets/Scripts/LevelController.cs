@@ -22,6 +22,7 @@ public class LevelController : MonoBehaviour
     private BlurOptimized blurScript;
     public bool dying = false;
     public Image darken;
+    public Text introduction;
     private Color c;
 
     //Variables to supply in the editor
@@ -45,17 +46,29 @@ public class LevelController : MonoBehaviour
         GameObject camera = player.transform.Find("Main Camera").gameObject;
         blurScript = camera.GetComponent<BlurOptimized>();
         c = darken.color;
-        c.a = 0;
         darken.color = c;
+        darken.fillAmount = 1;
     }
 
     void Update()
     {
-        if (c.a < 0.2f)
+        if (c.a > 0f)
         {
-            c.a += Time.deltaTime*0.1f;
+            c.a -= Time.deltaTime*0.1f;
             darken.color = c;
         }
+        if(c.a < 0.01f)
+        {
+            introduction.enabled = false;
+        }
+
+        if (!needToTake)
+        {
+            blurScript.blurSize = 0;
+            blurScript.downsample = 0;
+            blurScript.blurIterations = 1;
+        }
+
         if (needToTake && !dying)
         {
             blurScript.downsample = 1;
