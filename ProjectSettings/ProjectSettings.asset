@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 00000000000000000000000000000000
+  productGUID: ee2d08302ce566949858fa49fdf585cf
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -613,7 +613,7 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   cloudProjectId: 87171b51-ec04-4090-a613-52aaa250324d
   framebufferDepthMemorylessMode: 0
-  projectName: 
+  projectName: Disparity
   organizationId: dllott
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
