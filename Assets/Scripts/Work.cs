@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Work : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class Work : MonoBehaviour
         }
         else {
         }
+        SceneManager.LoadScene(sceneName: "Work");
     }
     // Update is called once per frame
     void Update()

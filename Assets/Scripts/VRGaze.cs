@@ -35,7 +35,8 @@ public class VRGaze : MonoBehaviour
           //This is for later on when we are adding the events
                 if(Physics.Raycast(ray, out _hit, distanceOfRay))
                 {
-                    if (imgGaze.fillAmount == 1 && _hit.transform.CompareTag("fridge"))
+                    if (imgGaze.fillAmount == 1 && 
+                _hit.transform.CompareTag("fridge"))
                     {
                 _hit.transform.gameObject.GetComponent<Health>().Eat();
                 gvrTimer = 0;
