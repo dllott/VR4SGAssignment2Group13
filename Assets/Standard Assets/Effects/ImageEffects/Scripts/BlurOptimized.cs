@@ -10,7 +10,7 @@ namespace UnityStandardAssets.ImageEffects
     {
 
         [Range(0, 2)]
-        public int downsample = 0;
+        public int downsample = 1;
 
         public enum BlurType {
             StandardGauss = 0,
@@ -18,10 +18,10 @@ namespace UnityStandardAssets.ImageEffects
         }
 
         [Range(0.0f, 10.0f)]
-        public float blurSize = 0.0f;
+        public float blurSize = 3.0f;
 
         [Range(1, 4)]
-        public int blurIterations = 1;
+        public int blurIterations = 2;
 
         public BlurType blurType= BlurType.StandardGauss;
 
