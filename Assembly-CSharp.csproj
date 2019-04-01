@@ -167,11 +167,11 @@
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\GvrCursorHelper.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\SuppressMemoryAllocationErrorAttribute.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
-     <Compile Include="Assets\MeshEditor\Scripts\GameObjectDeformer.cs" />
-     <Compile Include="Assets\MeshEditor\Scripts\GameObjectDeformerEditor.cs" />
-     <Compile Include="Assets\MeshEditor\Scripts\GizmoScript.cs" />
      <Compile Include="Assets\Scripts\bedBehavior.cs" />
+     <Compile Include="Assets\Scripts\DontDestroyOnLoad.cs" />
+     <Compile Include="Assets\Scripts\EndIntro.cs" />
      <Compile Include="Assets\Scripts\GameClock.cs" />
+     <Compile Include="Assets\Scripts\GoHome.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\InsulinInfo.cs" />
      <Compile Include="Assets\Scripts\LevelController.cs" />
@@ -180,7 +180,6 @@
      <Compile Include="Assets\Scripts\Work.cs" />
      <Compile Include="Assets\test.cs" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
-     <None Include="Assets\MeshEditor\LowPolyWeapon\Sprite Source.txt" />
      <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrController.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrUnlitTransparentOverlay.shader" />
@@ -189,14 +188,12 @@
      <None Include="Assets\GoogleVR\Shaders\Video\VideoUnlitShader.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrUnlitTextureOverlay.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrControllerReticle.shader" />
-     <None Include="Assets\MeshEditor\LowPolyWeapon\Shaders\AlphaTest-DiffuseDoublesided.shader" />
      <None Include="Assets\GoogleVR\Plugins\Android\AndroidManifest-Daydream.xml" />
      <None Include="Assets\GoogleVR\Demos\Shaders\HelloVR\HelloVRUnlitGrayscaleToColor.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrReticleShader.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlay.shader" />
      <None Include="Assets\GoogleVR\Plugins\Android\proguard-gvr.txt" />
      <None Include="Assets\GoogleVR\Plugins\Android\AndroidManifest-Cardboard.xml" />
-     <None Include="Assets\MeshEditor\LowPolyWeapon\Shaders\AlphaTest-DiffuseBack.shader" />
  <Reference Include="Unity.ProGrids">
  <HintPath>C:/Users/dllot/OneDrive/Documents/skool/VR for Social Good/Disparity/VR4SGAssignment2Group13/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
  </Reference>

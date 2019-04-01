@@ -54,6 +54,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Editor\ReadmeEditor.cs" />
+     <Compile Include="Assets\Editor\Scripts\GameObjectDeformer.cs" />
+     <Compile Include="Assets\Editor\Scripts\GameObjectDeformerEditor.cs" />
+     <Compile Include="Assets\Editor\Scripts\GizmoScript.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Editor\DemoInputManagerEditor.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Editor\PermissionsDemoBuildProcessor.cs" />
      <Compile Include="Assets\GoogleVR\Editor\Controller\GvrControllerVisualEditor.cs" />
@@ -69,6 +72,9 @@
      <Compile Include="Assets\GoogleVR\Legacy\Editor\Audio\GvrAudioRoomEditor.cs" />
      <Compile Include="Assets\GoogleVR\Legacy\Editor\Audio\GvrAudioSoundfieldEditor.cs" />
      <Compile Include="Assets\GoogleVR\Legacy\Editor\Audio\GvrAudioSourceEditor.cs" />
+     <None Include="Assets\Editor\LowPolyWeapon\Sprite Source.txt" />
+     <None Include="Assets\Editor\LowPolyWeapon\Shaders\AlphaTest-DiffuseDoublesided.shader" />
+     <None Include="Assets\Editor\LowPolyWeapon\Shaders\AlphaTest-DiffuseBack.shader" />
  <Reference Include="Unity.ProGrids">
  <HintPath>C:/Users/dllot/OneDrive/Documents/skool/VR for Social Good/Disparity/VR4SGAssignment2Group13/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
  </Reference>
