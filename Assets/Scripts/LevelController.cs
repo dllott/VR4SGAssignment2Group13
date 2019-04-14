@@ -78,11 +78,12 @@ public class LevelController : MonoBehaviour
 
         if(scene.name == "Main")
         {
+            count = 1;
             introduction = GameObject.Find("introtext").GetComponent<Text>();
         }
         if (scene.name == "Work")
         {
-            count = 1;
+            count = 2;
             job = GameObject.Find("worktext").GetComponent<Text>();
             Invoke("DisableWorkText", 5f);
         }
@@ -103,7 +104,7 @@ public class LevelController : MonoBehaviour
             c.a -= Time.deltaTime*0.1f;
             darken.color = c;
         }
-        if(c.a < 0.01f)
+        if(c.a < 0.01f && count == 1)
         {
             introduction.enabled = false;
             //

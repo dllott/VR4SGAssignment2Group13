@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GoHome : MonoBehaviour
 {
-    public const float TIME_LIM = 1000F;
+    public const float TIME_LIM = 360F;
     public const float TEXT_LIM = 5F;
     public Text job;
 
