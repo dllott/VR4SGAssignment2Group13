@@ -12,6 +12,8 @@ TagManager:
   - img
   - intro
   - playerloc
+  - unstacked
+  - stacked
   layers:
   - Default
   - TransparentFX

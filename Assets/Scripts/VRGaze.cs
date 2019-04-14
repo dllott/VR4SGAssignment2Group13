@@ -57,6 +57,13 @@ public class VRGaze : MonoBehaviour
 
                     }
 
+            if (imgGaze.fillAmount == 1 && _hit.transform.CompareTag("unstacked"))
+            {
+                _hit.transform.gameObject.GetComponent<stacking>().Stack();
+                gvrTimer = 0;
+
+            }
+
             if (imgGaze.fillAmount == 1 && _hit.transform.CompareTag("door"))
                     {
                         _hit.transform.gameObject.GetComponent<Work>().goWork();
