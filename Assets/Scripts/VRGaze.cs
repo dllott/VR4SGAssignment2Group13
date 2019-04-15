@@ -39,6 +39,7 @@ public class VRGaze : MonoBehaviour
                 _hit.transform.CompareTag("fridge"))
                     {
                 _hit.transform.gameObject.GetComponent<Health>().Eat();
+                //_hit.transform.gameObject.GetComponent<Dizzy>().Shake();
                 gvrTimer = 0;
                      
                     }
@@ -56,6 +57,13 @@ public class VRGaze : MonoBehaviour
                         gvrTimer = 0;
 
                     }
+
+            if (imgGaze.fillAmount == 1 && _hit.transform.CompareTag("unstacked"))
+            {
+                _hit.transform.gameObject.GetComponent<stacking>().Stack();
+                gvrTimer = 0;
+
+            }
 
             if (imgGaze.fillAmount == 1 && _hit.transform.CompareTag("door"))
                     {

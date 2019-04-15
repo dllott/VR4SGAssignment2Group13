@@ -61,6 +61,7 @@ public class Health : MonoBehaviour
         }
         _healthSlider.value = 0;
         insulin.GetComponent<InsulinInfo>().SetNeed(true);
+        fridge.GetComponent<Dizzy>().Shake();
         levelController.cash -= 50;
         gclock.MoveTime(1);
     }

@@ -23,7 +23,9 @@ public class LevelController : MonoBehaviour
     public bool dying = false;
     public Image darken;
     public Text introduction;
+    public Text job;
     private Color c;
+    int count;
 
     //Variables to supply in the editor
     [SerializeField] public Scene endscene;
@@ -70,23 +72,43 @@ public class LevelController : MonoBehaviour
         Debug.Log(mode);
         GameObject player = GameObject.Find("Player");
         darken = GameObject.Find("DarkenImage").GetComponent<Image>();
-        introduction = GameObject.Find("introtext").GetComponent<Text>();
+        //introduction = GameObject.Find("introtext").GetComponent<Text>();
         GameObject camera = player.transform.Find("Main Camera").gameObject;
         blurScript = camera.GetComponent<BlurOptimized>();
-        
+
+        if(scene.name == "Main")
+        {
+            count = 1;
+            introduction = GameObject.Find("introtext").GetComponent<Text>();
+        }
+        if (scene.name == "Work")
+        {
+            count = 2;
+            job = GameObject.Find("worktext").GetComponent<Text>();
+            Invoke("DisableWorkText", 5f);
+        }
+
+
+
     }
 
     void Update()
     {
+        //if(count == 1)
+        //{
+            
+        //}
+        //job.enabled = false;
         if (c.a > 0f)
         {
             c.a -= Time.deltaTime*0.1f;
             darken.color = c;
         }
-        if(c.a < 0.01f)
+        if(c.a < 0.01f && count == 1)
         {
             introduction = GameObject.Find("introtext").GetComponent<Text>();
             introduction.enabled = false;
+            //
         }
 
         if (!needToTake)
@@ -121,7 +143,10 @@ public class LevelController : MonoBehaviour
 
         
     }
-
+    public void DisableWorkText()
+    {
+        job.enabled = false;
+    }
     public void EndGame() {
         //scene fade transition instead?
         SceneManager.LoadScene(endscene.name);
