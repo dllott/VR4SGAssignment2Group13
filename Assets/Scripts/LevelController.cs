@@ -85,6 +85,7 @@ public class LevelController : MonoBehaviour
         }
         if(c.a < 0.01f)
         {
+            introduction = GameObject.Find("introtext").GetComponent<Text>();
             introduction.enabled = false;
         }
 

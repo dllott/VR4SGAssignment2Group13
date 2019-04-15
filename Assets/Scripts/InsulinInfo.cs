@@ -13,6 +13,7 @@ public class InsulinInfo : MonoBehaviour
     public GameObject insulin;
     //public int doses = 10;
     string sDoses;
+    public SoundPlayer sp;
     LevelController levelController;
     BlurOptimized blurScript;
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class InsulinInfo : MonoBehaviour
         //monn = GameObject.Find("computerdesk").GetComponent<Money>();
         insulin = GameObject.Find("Insulin");
         displayInsulin = insulin.GetComponentInChildren<Text>();
+        sp = GetComponent<SoundPlayer>();
     }
 
     // Update is called once per frame
@@ -40,6 +42,7 @@ public class InsulinInfo : MonoBehaviour
         {
             levelController.doses -= 1;
             SetNeed(false);
+            sp.PlayAudio();
         } else
         {
             if(levelController.cash >= 500)
