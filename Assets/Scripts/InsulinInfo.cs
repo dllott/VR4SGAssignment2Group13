@@ -42,7 +42,7 @@ public class InsulinInfo : MonoBehaviour
         {
             levelController.doses -= 1;
             SetNeed(false);
-            sp.PlayAudio();
+            //sp.PlayAudio();
         } else
         {
             if(levelController.cash >= 500)

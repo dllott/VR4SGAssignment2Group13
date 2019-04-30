@@ -11,7 +11,7 @@ public class bedBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sp = GetComponent<SoundPlayer>();
+       // sp = GetComponent<SoundPlayer>();
         clock = GameObject.Find("clock").GetComponentInChildren<GameClock>();
         insul = GameObject.Find("Insulin").GetComponent<InsulinInfo>();
         level = GameObject.Find("LevelController").GetComponent<LevelController>();

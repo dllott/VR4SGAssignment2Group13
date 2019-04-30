@@ -21,7 +21,7 @@ public class Work : MonoBehaviour
     }
     public void goWork()
     {
-        sp.PlayAudio();
+        //sp.PlayAudio();
         if (!clock.GetComponentInChildren<GameClock>().bedTime)
         {
             clock.GetComponentInChildren<GameClock>().working();//hour += 7;

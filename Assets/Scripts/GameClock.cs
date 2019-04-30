@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 //static var hour = 6;
 
 public class GameClock : MonoBehaviour
 {
+    Scene currentScene; //= SceneManager.GetActiveScene();
+
+    // Retrieve the name of this scene.
+    string sceneName;
     //public int day = 0;
     public int maxDay = 28;
     private Text displayClock;
@@ -21,6 +26,10 @@ public class GameClock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentScene = SceneManager.GetActiveScene();
+
+        // Retrieve the name of this scene.
+        sceneName = currentScene.name;
         levelController = GameObject.Find("LevelController").GetComponent<LevelController>();
         hunger = GameObject.Find("fridge").GetComponent<Health>();
         displayClock = GetComponent<Text>();
@@ -59,6 +68,7 @@ public class GameClock : MonoBehaviour
         }*/
         string dispHour = LeadingZero(levelController.hour);
         string dispMinutes = LeadingZero(levelController.minutes);
+
         displayClock.text = dispHour + ":" + dispMinutes + levelController.dayNight;
         if(levelController.dayNight == "P.M." && levelController.hour > 7 || levelController.dayNight == "A.M." && levelController.hour < 6)
         {

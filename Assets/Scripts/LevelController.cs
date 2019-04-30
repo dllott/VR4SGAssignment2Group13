@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour
 {
+    public int count;
     public int cash = 500;
     public int Day = 0;
     public int hour= 7;
@@ -86,8 +87,8 @@ public class LevelController : MonoBehaviour
         if (scene.name == "Work")
         {
             count = 2;
-            job = GameObject.Find("worktext").GetComponent<Text>();
-            Invoke("DisableWorkText", 5f);
+           // job = GameObject.Find("worktext").GetComponent<Text>();
+           // Invoke("DisableWorkText", 5f);
         }
 
 
