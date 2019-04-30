@@ -25,7 +25,9 @@ public class LevelController : MonoBehaviour
     public Text introduction;
     public Text job;
     private Color c;
-    int count;
+    public bool fadeIn = true;
+    public bool fadeOut = false;
+    private bool slowFade = true;
 
     //Variables to supply in the editor
     [SerializeField] public Scene endscene;
@@ -47,9 +49,9 @@ public class LevelController : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         GameObject camera = player.transform.Find("Main Camera").gameObject;
         blurScript = camera.GetComponent<BlurOptimized>();
-        c = darken.color;
-        darken.color = c;
         darken.fillAmount = 1;
+        c = darken.color;
+        fadeIn = true;
     }
 
     void OnEnable()
@@ -94,20 +96,29 @@ public class LevelController : MonoBehaviour
 
     void Update()
     {
-        //if(count == 1)
-        //{
-            
-        //}
-        //job.enabled = false;
-        if (c.a > 0f)
+        if (fadeIn)
         {
-            c.a -= Time.deltaTime*0.1f;
+            if (slowFade) c.a -= Time.deltaTime * 0.1f;
+            else c.a -= Time.deltaTime * 0.5f;
+            darken.color = c;
+            if (c.a < 0.01f)
+            {
+                slowFade = false;
+                introduction.enabled = false;
+                fadeIn = false;
+            }
+        }
+        //fadeOut currently fades out then back in, because I think that's the behavior we want, but that can be changed
+        if (fadeOut)
+        {
+            c.a += Time.deltaTime * 0.5f;
             darken.color = c;
         }
-        if(c.a < 0.01f && count == 1)
+        
+        if(c.a > .99f)
         {
-            introduction.enabled = false;
-            //
+            fadeOut = false;
+            fadeIn = true;
         }
 
         if (!needToTake)
