@@ -8,6 +8,7 @@ public class bedBehavior : MonoBehaviour
     InsulinInfo insul;
     LevelController level;
     bool justSlept = false;
+    SoundPlayer sp;
     // Start is called before the first frame update
     void Start()
     {
