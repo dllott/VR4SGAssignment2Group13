@@ -28,6 +28,7 @@ public class LevelController : MonoBehaviour
     public bool fadeIn = true;
     public bool fadeOut = false;
     private bool slowFade = true;
+    private VRGaze gazescript;
 
     //Variables to supply in the editor
     [SerializeField] public Scene endscene;
@@ -77,15 +78,16 @@ public class LevelController : MonoBehaviour
         //introduction = GameObject.Find("introtext").GetComponent<Text>();
         GameObject camera = player.transform.Find("Main Camera").gameObject;
         blurScript = camera.GetComponent<BlurOptimized>();
+        gazescript = player.GetComponent<VRGaze>();
 
-        if(scene.name == "Main")
+        if (scene.name == "Main")
         {
-            count = 1;
+            //count = 1;
             introduction = GameObject.Find("introtext").GetComponent<Text>();
         }
         if (scene.name == "Work")
         {
-            count = 2;
+            //count = 2;
             job = GameObject.Find("worktext").GetComponent<Text>();
             Invoke("DisableWorkText", 5f);
         }
@@ -98,6 +100,7 @@ public class LevelController : MonoBehaviour
     {
         if (fadeIn)
         {
+            gazescript.GVROff();
             if (slowFade) c.a -= Time.deltaTime * 0.1f;
             else c.a -= Time.deltaTime * 0.5f;
             darken.color = c;
@@ -106,6 +109,7 @@ public class LevelController : MonoBehaviour
                 slowFade = false;
                 introduction.enabled = false;
                 fadeIn = false;
+
             }
         }
         //fadeOut currently fades out then back in, because I think that's the behavior we want, but that can be changed
