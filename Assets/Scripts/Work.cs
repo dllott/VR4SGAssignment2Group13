@@ -17,6 +17,7 @@ public class Work : MonoBehaviour
         door = GameObject.Find("door");
         money = GameObject.Find("computerdesk");
         clock = GameObject.Find("clock");
+
         sp = GetComponent<SoundPlayer>();
     }
     public void goWork()

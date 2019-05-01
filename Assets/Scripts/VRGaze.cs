@@ -39,6 +39,7 @@ public class VRGaze : MonoBehaviour
                 _hit.transform.CompareTag("fridge"))
                     {
                 _hit.transform.gameObject.GetComponent<Health>().Eat();
+
                 //_hit.transform.gameObject.GetComponent<Dizzy>().Shake();
                 gvrTimer = 0;
                      

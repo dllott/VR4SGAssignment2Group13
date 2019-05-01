@@ -7,6 +7,7 @@ public class Money : MonoBehaviour
 {
     public Text displayMoney;
     public GameObject money;
+
     //public int cash = 500;
     string sCash;
     LevelController levelController;

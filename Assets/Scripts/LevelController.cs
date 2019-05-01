@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour
 {
+
     public int count;
     public int cash = 500;
     public int Day = 0;
@@ -24,6 +25,7 @@ public class LevelController : MonoBehaviour
     public bool dying = false;
     public Image darken;
     public Text introduction;
+
     public Text job;
     private Color c;
     public bool fadeIn = true;
@@ -50,6 +52,7 @@ public class LevelController : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         GameObject camera = player.transform.Find("Main Camera").gameObject;
         blurScript = camera.GetComponent<BlurOptimized>();
+
         darken.fillAmount = 1;
         c = darken.color;
         fadeIn = true;
@@ -97,6 +100,7 @@ public class LevelController : MonoBehaviour
 
     void Update()
     {
+
         if (fadeIn)
         {
             if (slowFade) c.a -= Time.deltaTime * 0.1f;
@@ -154,6 +158,7 @@ public class LevelController : MonoBehaviour
 
         
     }
+
     public void DisableWorkText()
     {
         job.enabled = false;

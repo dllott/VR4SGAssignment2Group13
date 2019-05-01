@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+
 using UnityEngine.SceneManagement;
 
 //static var hour = 6;
 
 public class GameClock : MonoBehaviour
 {
+
     Scene currentScene; //= SceneManager.GetActiveScene();
 
     // Retrieve the name of this scene.
@@ -26,6 +28,7 @@ public class GameClock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         currentScene = SceneManager.GetActiveScene();
 
         // Retrieve the name of this scene.
@@ -68,9 +71,10 @@ public class GameClock : MonoBehaviour
         }*/
         string dispHour = LeadingZero(levelController.hour);
         string dispMinutes = LeadingZero(levelController.minutes);
+        string dispDay = LeadingZero(levelController.Day);
+        displayClock.text = dispHour + ":" + dispMinutes + levelController.dayNight + "    Day: " + dispDay;
+        if(levelController.dayNight == "P.M." && levelController.hour > 7 && levelController.hour != 12 || levelController.dayNight == "A.M." && levelController.hour < 6)
 
-        displayClock.text = dispHour + ":" + dispMinutes + levelController.dayNight;
-        if(levelController.dayNight == "P.M." && levelController.hour > 7 || levelController.dayNight == "A.M." && levelController.hour < 6)
         {
             bedTime = true;
         } else
@@ -80,8 +84,15 @@ public class GameClock : MonoBehaviour
     }
     public void working()
     {
-        hunger.CountHunger(5);
-        levelController.hour += 7;
+        hunger.CountHunger(8);
+        levelController.hour += 4;
+        CheckDayNight();
+    }
+    public void sleeping()
+    {
+        hunger.CountHunger(10);
+        levelController.hour += 8;
+
         CheckDayNight();
     }
     public void MoveTime(int t)
@@ -96,6 +107,7 @@ public class GameClock : MonoBehaviour
 
     void CheckDayNight()
     {
+
         if (levelController.hour >= 12)
         {
             if (levelController.dayNight == "A.M.")

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 using UnityEngine.UI;
 public class GoHome : MonoBehaviour
 {
@@ -21,12 +22,13 @@ public class GoHome : MonoBehaviour
     void Update()
     {
         this.timer += Time.deltaTime;
-        this.text_timer = Time.deltaTime;
+
 
         if(this.timer >= TIME_LIM)
         {
             SceneManager.LoadScene("Main");
         }
+
         if(this.text_timer >= TEXT_LIM)
         {
             //job.enabled = false;

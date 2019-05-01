@@ -13,6 +13,7 @@ public class InsulinInfo : MonoBehaviour
     public GameObject insulin;
     //public int doses = 10;
     string sDoses;
+
     public SoundPlayer sp;
     LevelController levelController;
     BlurOptimized blurScript;
@@ -23,6 +24,7 @@ public class InsulinInfo : MonoBehaviour
         //monn = GameObject.Find("computerdesk").GetComponent<Money>();
         insulin = GameObject.Find("Insulin");
         displayInsulin = insulin.GetComponentInChildren<Text>();
+
         sp = GetComponent<SoundPlayer>();
     }
 
@@ -42,13 +44,13 @@ public class InsulinInfo : MonoBehaviour
         {
             levelController.doses -= 1;
             SetNeed(false);
-            //sp.PlayAudio();
         } else
         {
-            if(levelController.cash >= 500)
+            if(levelController.cash >= 400)
             {
-                levelController.cash -= 500;
-                levelController.doses += 90;
+                levelController.cash -= 400;
+                levelController.doses += 30;
+
             }
         }
 

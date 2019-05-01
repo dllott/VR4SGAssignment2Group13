@@ -6,6 +6,7 @@ public class bedBehavior : MonoBehaviour
 {
     GameClock clock;
     InsulinInfo insul;
+
     LevelController level;
     bool justSlept = false;
     // Start is called before the first frame update
@@ -26,10 +27,12 @@ public class bedBehavior : MonoBehaviour
     void Update()
     {
 
+
     }
 
     public void Sleep()
     {
+
         //prevent double sleep
         if (!justSlept)
         {
