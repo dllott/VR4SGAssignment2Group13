@@ -15,7 +15,7 @@ public class EndIntro : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Invoke("Transition", 7);
+        Invoke("Transition", 46);
     }
 
 }

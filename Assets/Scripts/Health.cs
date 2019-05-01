@@ -54,7 +54,7 @@ public class Health : MonoBehaviour
     }
     public void Eat()
     {
-        //sp.PlayAudio();
+        sp.PlayAudio();
         levelController._hunger -= 10.0f;
         if(levelController._hunger < 0) {
             levelController._hunger = 0;
