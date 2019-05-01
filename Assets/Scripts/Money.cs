@@ -7,7 +7,8 @@ public class Money : MonoBehaviour
 {
     public Text displayMoney;
     public GameObject money;
-    //public int cash = 400;
+
+    //public int cash = 500;
     string sCash;
     LevelController levelController;
     // Start is called before the first frame update

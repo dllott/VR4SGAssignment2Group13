@@ -8,7 +8,9 @@ using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour
 {
-    public int cash = 400;
+
+    public int count;
+    public int cash = 500;
     public int Day = 0;
     public int hour= 7;
     public int minutes = 0;
@@ -23,7 +25,12 @@ public class LevelController : MonoBehaviour
     public bool dying = false;
     public Image darken;
     public Text introduction;
+
+    public Text job;
     private Color c;
+    public bool fadeIn = true;
+    public bool fadeOut = false;
+    private bool slowFade = true;
 
     //Variables to supply in the editor
     [SerializeField] public Scene endscene;
@@ -45,9 +52,10 @@ public class LevelController : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         GameObject camera = player.transform.Find("Main Camera").gameObject;
         blurScript = camera.GetComponent<BlurOptimized>();
-        c = darken.color;
-        darken.color = c;
+
         darken.fillAmount = 1;
+        c = darken.color;
+        fadeIn = true;
     }
 
     void OnEnable()
@@ -70,22 +78,52 @@ public class LevelController : MonoBehaviour
         Debug.Log(mode);
         GameObject player = GameObject.Find("Player");
         darken = GameObject.Find("DarkenImage").GetComponent<Image>();
-        introduction = GameObject.Find("introtext").GetComponent<Text>();
+        //introduction = GameObject.Find("introtext").GetComponent<Text>();
         GameObject camera = player.transform.Find("Main Camera").gameObject;
         blurScript = camera.GetComponent<BlurOptimized>();
-        
+
+        if(scene.name == "Main")
+        {
+            count = 1;
+            introduction = GameObject.Find("introtext").GetComponent<Text>();
+        }
+        if (scene.name == "Work")
+        {
+            count = 2;
+           // job = GameObject.Find("worktext").GetComponent<Text>();
+           // Invoke("DisableWorkText", 5f);
+        }
+
+
+
     }
 
     void Update()
     {
-        if (c.a > 0f)
+
+        if (fadeIn)
         {
-            c.a -= Time.deltaTime*0.1f;
+            if (slowFade) c.a -= Time.deltaTime * 0.1f;
+            else c.a -= Time.deltaTime * 0.5f;
+            darken.color = c;
+            if (c.a < 0.01f)
+            {
+                slowFade = false;
+                introduction.enabled = false;
+                fadeIn = false;
+            }
+        }
+        //fadeOut currently fades out then back in, because I think that's the behavior we want, but that can be changed
+        if (fadeOut)
+        {
+            c.a += Time.deltaTime * 0.5f;
             darken.color = c;
         }
-        if(c.a < 0.01f)
+        
+        if(c.a > .99f)
         {
-            introduction.enabled = false;
+            fadeOut = false;
+            fadeIn = true;
         }
 
         if (!needToTake)
@@ -121,9 +159,13 @@ public class LevelController : MonoBehaviour
         
     }
 
+    public void DisableWorkText()
+    {
+        job.enabled = false;
+    }
     public void EndGame() {
         //scene fade transition instead?
-        SceneManager.LoadScene("EndScene");
+        SceneManager.LoadScene(endscene.name);
     }
 
     public void IncrementDay()

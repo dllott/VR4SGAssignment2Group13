@@ -9,6 +9,7 @@ public class Work : MonoBehaviour
     public GameObject money;
     public GameObject clock;
     LevelController levelController;
+    SoundPlayer sp;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,13 +17,16 @@ public class Work : MonoBehaviour
         door = GameObject.Find("door");
         money = GameObject.Find("computerdesk");
         clock = GameObject.Find("clock");
+
+        sp = GetComponent<SoundPlayer>();
     }
     public void goWork()
     {
+        //sp.PlayAudio();
         if (!clock.GetComponentInChildren<GameClock>().bedTime)
         {
-            clock.GetComponentInChildren<GameClock>().working();//hour += 4;
-            levelController.cash += 30;
+            clock.GetComponentInChildren<GameClock>().working();//hour += 7;
+            levelController.cash += 100;
         }
         else {
         }

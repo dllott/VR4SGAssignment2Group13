@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - control
+  - fridge
+  - bed
+  - door
+  - insulin
+  - img
+  - intro
+  - playerloc
+  - unstacked
+  - stacked
   layers:
   - Default
   - TransparentFX

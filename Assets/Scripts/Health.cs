@@ -16,6 +16,8 @@ public class Health : MonoBehaviour
     //public  float _hunger = 0.0f;
     double secondsSinceStart;
     LevelController levelController;
+
+    SoundPlayer sp;
     // Start is called before the first frame update
 
     void Start()
@@ -27,7 +29,8 @@ public class Health : MonoBehaviour
         money = GameObject.Find("computerdesk");
         _healthSlider = fridge.GetComponentInChildren<Slider>();
         gclock = GameObject.Find("clock").GetComponentInChildren<GameClock>();
-        
+
+        sp = GetComponent<SoundPlayer>();
         //InvokeRepeating("CountHunger", 1.0f, 1.0f);
     }
 
@@ -53,13 +56,17 @@ public class Health : MonoBehaviour
     }
     public void Eat()
     {
-        levelController._hunger -= 12.0f;
+
+        //sp.PlayAudio();
+        levelController._hunger -= 10.0f;
         if(levelController._hunger < 0) {
             levelController._hunger = 0;
         }
         _healthSlider.value = 0;
         insulin.GetComponent<InsulinInfo>().SetNeed(true);
-        levelController.cash -= 40;
+
+        fridge.GetComponent<Dizzy>().Shake();
+        levelController.cash -= 50;
         gclock.MoveTime(1);
     }
 }

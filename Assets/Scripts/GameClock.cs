@@ -4,10 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+using UnityEngine.SceneManagement;
+
 //static var hour = 6;
 
 public class GameClock : MonoBehaviour
 {
+
+    Scene currentScene; //= SceneManager.GetActiveScene();
+
+    // Retrieve the name of this scene.
+    string sceneName;
     //public int day = 0;
     public int maxDay = 28;
     private Text displayClock;
@@ -21,6 +28,11 @@ public class GameClock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        currentScene = SceneManager.GetActiveScene();
+
+        // Retrieve the name of this scene.
+        sceneName = currentScene.name;
         levelController = GameObject.Find("LevelController").GetComponent<LevelController>();
         hunger = GameObject.Find("fridge").GetComponent<Health>();
         displayClock = GetComponent<Text>();
@@ -62,6 +74,7 @@ public class GameClock : MonoBehaviour
         string dispDay = LeadingZero(levelController.Day);
         displayClock.text = dispHour + ":" + dispMinutes + levelController.dayNight + "    Day: " + dispDay;
         if(levelController.dayNight == "P.M." && levelController.hour > 7 && levelController.hour != 12 || levelController.dayNight == "A.M." && levelController.hour < 6)
+
         {
             bedTime = true;
         } else
@@ -79,6 +92,7 @@ public class GameClock : MonoBehaviour
     {
         hunger.CountHunger(10);
         levelController.hour += 8;
+
         CheckDayNight();
     }
     public void MoveTime(int t)
@@ -93,7 +107,8 @@ public class GameClock : MonoBehaviour
 
     void CheckDayNight()
     {
-        if (levelController.hour > 12)
+
+        if (levelController.hour >= 12)
         {
             if (levelController.dayNight == "A.M.")
             {
